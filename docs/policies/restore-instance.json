@@ -1,0 +1,38 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": "ec2:RunInstances",
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "ec2:RunInstances",
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:ec2:*:*:subnet/*",
+                "arn:aws:ec2:*:*:volume/*",
+                "arn:aws:ec2:*:*:network-interface/*",
+                "arn:aws:ec2:*:*:key-pair/*",
+                "arn:aws:ec2:*:*:security-group/*"
+            ]
+        },
+        {
+            "Action": "iam:PassRole",
+            "Effect": "Allow",
+            "Resource": "arn:aws:iam::*:role/benzoin_restore_instance"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateTags"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:ec2:*:*:volume/*",
+                "arn:aws:ec2:*:*:snapshot/*"
+            ]
+        }
+    ]
+}

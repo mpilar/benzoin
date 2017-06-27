@@ -1,0 +1,27 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "allowAllDescribes",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:Describe*",
+                "ec2:CreateSnapshot",
+                "ec2:CreateTags",
+                "ec2:DeleteSnapshot"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        }
+    ]
+}

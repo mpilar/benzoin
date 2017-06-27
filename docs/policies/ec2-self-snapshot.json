@@ -1,0 +1,32 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "allowSnapshotsViaTag",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateSnapshot"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "allowAllDescribes",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:Describe*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "states:StartExecution"
+            ],
+            "Resource": "arn:aws:states:*:*:stateMachine:BENZOIN*"
+        }
+    ]
+}
